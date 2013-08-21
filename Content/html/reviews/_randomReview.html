@@ -1,0 +1,25 @@
+﻿<article>
+    <img ng-src="{{ GetReviewImage(RandomReview) }}" />
+	<section class="random-review-body">
+		<div>
+			<h1>{{RandomReview.BookTitle}}</h1>
+			<span class="player-controls">
+				<span ng-click="RecentReview(-1)"><</span>
+				<span ng-class="{undisplayed: PauseRandomReviewSelection}" ng-click="Switch()">pause</span>
+				<span ng-class="{undisplayed: !PauseRandomReviewSelection}" ng-click="Switch()">play</span>
+				<span ng-click="RecentReview(1)">></span>
+			</span>
+		</div>
+		<div>
+			<span class="authors" ng-repeat="author in RandomReview.Authors">
+				{{ author.FirstName + ' ' + author.LastName + author.Delimiter }}  <!-- We may want to do this as a function instead passing in the index??? -->
+			</span>
+			<span class="read-date">
+				{{ 'Reviewed:' +  parseDate(RandomReview.ReadDate) }}
+			</span>
+		</div>
+		<div>{{RandomReview.ShortReview}}</div>
+	</div>
+</article>
+
+

@@ -1,0 +1,34 @@
+﻿<div id="full-review" class="row-fluid">
+    <div class="span12">
+        <h1>
+            {{FullReview.BookTitle}}
+            <span class="authors" ng-repeat="author in FullReview.Authors">
+                {{ author.FirstName + ' ' + author.LastName + author.Delimiter }}  <!-- We may want to do this as a function instead passing in the index??? -->
+            </span>
+            <span class="read-date">
+                {{ 'Reviewed:' + parseDate(FullReview.ReadDate) }}
+            </span>
+        </h1>
+        <span class="back" ng-click="$parent.FullReview = null">« Back</span>
+    </div>
+    <div class="span12">
+        <div id="more-details-closed" ng-click="MoreInfoShowing = !MoreInfoShowing" ng-class="{undisplayed: MoreInfoShowing}" class="more-details-nav">Show More Details</div>
+        <div id="more-details-open" ng-click="MoreInfoShowing = !MoreInfoShowing" ng-class="{undisplayed: !MoreInfoShowing}">
+			<article class='main'>
+				<div class="multi-row"><span>Synopsis:</span>{{ FullReview.Synopsis }}</div>
+				<div class="multi-row"><span>Content notes:</span>{{ FullReview.ContentNotes }}</div>
+				<div><span>Page Count:</span>{{ FullReview.PageCount }}</div>
+				<div><span>Genre:</span>{{ FullReview.Genre }}</div>
+				<div ng-class="{undisplayed: !FullReview.Google}"><span>Average Rating (Google):</span>{{ GetReviewAverageRating(FullReview) }}</div>
+				<div ng-class="{undisplayed: !FullReview.Google}"><span>Ratings Count (Google):</span>{{ GetReviewRatingsCount(FullReview) }}</div>
+				<div ng-class="{undisplayed: !FullReview.Google}" ng-repeat="category in GetReviewCategories(FullReview)"><span>Categories (Google):</span>{{ category }}</div>
+			</article>
+            <div class="back more-details-nav" ng-click="$parent.MoreInfoShowing = !$parent.MoreInfoShowing">Show Less Details</div>
+        </div>
+        <div class="long-review"> <!--review-body -->
+            <img class="book-img" ng-src="{{ GetReviewImage(FullReview) }}" />
+            <span class="review-text">{{FullReview.LongReview}}</span>
+        </div>
+    </div>
+</div>
+

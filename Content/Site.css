@@ -1,0 +1,208 @@
+﻿.hero-unit {
+    min-height: 230px;
+    padding: 45px 20px 50px 20px;
+}
+
+.hero-unit img {
+    float: left;
+    padding: 5px 10px 5px 0px;
+}
+
+.read-date {
+    letter-spacing: .1em;
+    color: gray;
+    font-size: 1.2em;
+}
+
+.authors {
+    letter-spacing: .1em;
+    color: #8a8;
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.recent-reviews-navigation div {
+    float: right;
+    display: inline-block;
+}
+
+.recent h2 {
+}
+
+.recent h2:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+.undisplayed {
+    display: none !important;
+}
+
+#full-review .review-text {
+    font-weight: normal;
+	display: block;
+}
+
+#full-review h1 {
+    width: 80%;
+    float: left;
+}
+
+#full-review h1 span {
+    font-size: .6em;
+    font-weight: normal;
+}
+
+#full-review .book-img {
+    margin-right: 10px;
+    float: left
+}
+
+#full-review .back {
+    float: right;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 15px 3px 0px 0px;
+}
+
+#full-review .back:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+#full-review #more-details-closed {
+    background-color: #0088cc;
+    width: 80px;
+    height: 400px;
+    display: inline-block;
+    margin-left: -30px;
+	position: absolute;
+	
+	font-weight: bold;
+    letter-spacing: .1em;
+	color: white;
+	font-size: .9em;
+	text-align: center;
+}
+
+
+#full-review #more-details-closed:hover {
+	color: blue;
+	cursor: pointer;
+}
+
+.more-details-nav {
+	font-weight: bold;
+    letter-spacing: .1em;
+	color: white;
+	font-size: .9em !important;
+	text-align: center;
+}
+
+#full-review #more-details-open {
+    /*background-color: #0088cc;*/
+    background-color: #fff;
+    border: 3px solid #0088cc;
+    width: 72%;
+    height: 400px;
+    display: inline-block;
+    margin-left: -30px;
+    position: absolute;
+}
+
+#full-review #more-details-open .main {
+	width: 91%;
+	float: left;
+	padding: 14px;
+	/*color: #8a8;
+	height: 100%;*/
+}
+
+#full-review #more-details-open .back {
+	width: 6%;
+	float: left;
+    background-color: #0088cc;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	margin-left: 6px;
+}
+
+#full-review .long-review {
+    font-size: 1.5em;
+    overflow: auto;
+    height: 400px;
+    padding: 0px 10px 0px 0px;
+    line-height: 30px;
+    display: inline-block !important;
+    width: 91%;
+	margin-left: 53px;
+}
+
+#side-content {
+    padding-top: 30px;
+}
+
+.tweet {
+    background-color: #f5f5f5;
+    padding: 5px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.tweet .name {
+    font-weight: bold;
+}
+
+.tweet .text {
+    font-size: .9em;
+}
+
+.tweet .details {
+    position: relative;
+    height: 16px;
+}
+
+.tweet .date {
+    position: absolute;
+    right: 5px;
+    font-style: italic;
+    font-size: .8em;
+    letter-spacing: .1em;
+}
+
+#review-pager {
+}
+
+#review-pager .nav {
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+#review-pager .nav:hover {
+    color: blue;
+
+}
+
+.random-review-body {
+	display: inline;
+	width: 75%;
+}
+
+.random-review-body h1 {
+	width: 72%;
+}
+
+.random-review-body .player-controls {
+	float: right;
+}
+
+.random-review-body .player-controls span {
+	font-weight: bold;
+}
+
+.random-review-body .player-controls span:hover {
+	cursor: pointer;
+	color: blue;
+}

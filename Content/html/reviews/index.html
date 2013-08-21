@@ -1,0 +1,31 @@
+﻿<div ng-controller="BRM.ReviewsController" id="reviews-main">
+    <div class="main-reviews" ng-cloak>
+        <article class="hero-unit" ng-class="{undisplayed: RandomReview == null}" ng-include="Reviews.RandomReview"></article>
+
+        <div id="recent-reviews" ng-class="{undisplayed: FullReview != null}">
+            <div class="row-fluid">
+                <div class="span12 recent-reviews-navigation">
+                    <div id="review-pager">
+                        <span class="nav" ng-click="Navigate(0)">|<</span>
+                        <span class="nav" ng-click="Navigate(ReviewFilter.PageIndex -1)"><</span>
+                        Page {{ReviewFilter.PageIndex + 1}} of {{ReviewFilter.TotalPages}}
+                        <span class="nav" ng-click="Navigate(ReviewFilter.PageIndex + 1)">></span>
+                        <span class="nav" ng-click="Navigate(ReviewFilter.TotalPages - 1)">>|</span>
+                    </div>
+                    <div>
+                        <span>Genre:</span><select ng-model="CurrentGenre"
+                                                   ng-options="g.OriginalId as g.Name for g in Genres"
+                                                   ng-change="Navigate(0)"></select>
+                    </div>  
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span4 recent" ng-repeat="review in RecentReviews.slice(0, 3)" ng-include="Reviews.RecentReview"></div><!--/span-->
+            </div>
+            <div class="row-fluid">
+                <div class="span4 recent" ng-repeat="review in RecentReviews.slice(3, 6)" ng-include="Reviews.RecentReview"></div><!--/span-->
+            </div>
+        </div>
+        <div ng-class="{undisplayed: FullReview == null}" ng-include="Reviews.FullReview"></div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+﻿<div id="full-author" class="row-fluid">
+    <div class="span12">
+        <h1>
+            {{FullAuthor.LastName}}
+        </h1>
+        <span class="back" ng-click="$parent.FullAuthor = null">« Back</span>
+    </div>
+    <div class="span12">
+        <div id="more-details-closed" ng-click="MoreInfoShowing = !MoreInfoShowing" ng-class="{undisplayed: MoreInfoShowing}"></div>
+        <div id="more-details-open" ng-click="MoreInfoShowing = !MoreInfoShowing" ng-class="{undisplayed: !MoreInfoShowing}">
+            <div>{{ FullAuthor.LastName }}</div>
+            <span class="back" ng-click="$parent.MoreInfoShowing = !$parent.MoreInfoShowing">« Back</span>
+        </div>
+    </div>
+</div>
+
