@@ -1,4 +1,5 @@
-﻿var BRM = BookReviewsManager = [];
+﻿var BRM = BookReviewsManager = {};
+BRM.WebApi = "http://api.book.reviews/Api/";
 
 BRM.InitializeEvent = function (evt) {
     var createRepeatingFunction = function (fn, frequency) {

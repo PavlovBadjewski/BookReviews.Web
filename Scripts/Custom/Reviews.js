@@ -68,7 +68,7 @@
 		if (id !== '' ) {
 			var config = {
                 method: 'GET',
-                url: 'http://api.book.reviews/Api/Reviews/ReviewById',
+                url: BRM.WebApi + 'Reviews/ReviewById',
                 params: { id: id }
             };
 
@@ -92,7 +92,7 @@
         if (pageIndex >= 0 && (!$scope.ReviewFilter || pageIndex < $scope.ReviewFilter.TotalPages)) {
             var config = {
                 method: 'POST',
-                url: 'http://api.book.reviews/Api/Reviews/SelectReviewsByDate',
+                url: BRM.WebApi + 'Reviews/SelectReviewsByDate',
                 data: { PageIndex: pageIndex, ItemsPerPage: 6, Genre: $scope.CurrentGenre }
             };
 
@@ -132,7 +132,7 @@
         },
         repeat: function () {
 			if (!$scope.PauseRandomReviewSelection) {
-				$http.get("http://api.book.reviews/Api/Reviews/RandomReview")
+				$http.get(BRM.WebApi + "Reviews/RandomReview")
 					.success(function (data) {
 						$scope.RandomReview = data;
 						$scope.PreviousReviews.unshift(data.Id);

@@ -4,7 +4,7 @@
         onInit: function () {
         },
         repeat: function () {
-            $http.get("http://api.book.reviews/Api/Twitter/CurrentTweets")
+            $http.get(BRM.WebApi + 'Twitter/CurrentTweets')
                 .success(function (data) {
                     if (!$scope.Tweets) {
                         $scope.Tweets = data;

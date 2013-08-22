@@ -16,7 +16,7 @@
         onInit: function () {
         },
         repeat: function () {
-            $http.get("http://api.book.reviews/Api/Authors/RandomAuthor")
+            $http.get(BRM.WebApi + 'Authors/RandomAuthor')
                 .success(function (data) {
                     $scope.RandomAuthor = data;
                 })
@@ -33,7 +33,7 @@
         $scope.Genres = data;
     });
 
-    var x = $http.get("http://api.book.reviews/Api/Authors/SelectAuthorsByDate?pageIndex=0&authorCount=6")
+    var x = $http.get(BRM.WebApi + 'Authors/SelectAuthorsByDate?pageIndex=0&authorCount=6')
         .success(function (data) {
             for (var i = 0; i < data.length; i++) {
                 data[i] = massageAuthor(data[i]);
