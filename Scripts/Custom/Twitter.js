@@ -16,7 +16,7 @@
                     // or server returns response with an error status.
                 });
         },
-        frequency: 60000
+        frequency: 240000
     });
 
     BRM.InitializeEvent({
