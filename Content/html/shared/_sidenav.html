@@ -21,7 +21,7 @@
                 <section>
                     <div>
                         <span class="name">{{ tweet.ScreenName + ":" }}</span>
-                        <span class="text">{{ tweet.Text }}</span>
+						<span class="text" ng-bind-html-unsafe="tweet.Text"></span>
                     </div>
                     <div class="details">
                         <span class="date">{{ parseDateTime(tweet.CreatedAt) }}</span>
