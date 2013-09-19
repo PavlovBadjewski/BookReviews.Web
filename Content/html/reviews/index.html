@@ -5,14 +5,14 @@
         <div id="recent-reviews" ng-class="{undisplayed: FullReview != null}">
             <div class="row-fluid">
                 <div class="span12 recent-reviews-navigation">
-                    <div id="review-pager">
+                    <div id="pager">
                         <span class="nav" ng-click="Navigate(0)">|<</span>
-                        <span class="nav" ng-click="Navigate(ReviewFilter.PageIndex -1)"><</span>
+                        <span class="nav" ng-click="Navigate(ReviewFilter.PageIndex - 1)"><</span>
                         Page {{ReviewFilter.PageIndex + 1}} of {{ReviewFilter.TotalPages}}
                         <span class="nav" ng-click="Navigate(ReviewFilter.PageIndex + 1)">></span>
                         <span class="nav" ng-click="Navigate(ReviewFilter.TotalPages - 1)">>|</span>
                     </div>
-                    <div>
+                    <div id="genre-picker">
                         <span>Genre:</span><select ng-model="CurrentGenre"
                                                    ng-options="g.OriginalId as g.Name for g in Genres"
                                                    ng-change="Navigate(0)"></select>

@@ -1,1 +1,12 @@
-﻿<h1>{{RandomAuthor.LastName}}</h1>
+﻿<article>
+    <img ng-src="{{ GetAuthorImage(RandomAuthor) }}" />
+	<section class="random-author-body">
+		<div>
+			<h1>{{RandomAuthor.FirstName + " " + RandomAuthor.LastName}}</h1>
+            <span content-player content-count="100" id-field="'Id'" section="'authors'"
+                  byid-rest-endpoint="'Authors/AuthorById'" content-rest-endpoint="'Authors/RandomAuthor'" set-content="SetRandomAuthor"/></span>
+		</div>
+
+		<div>{{RandomAuthor.Notes}}</div>
+	</div>
+</article>

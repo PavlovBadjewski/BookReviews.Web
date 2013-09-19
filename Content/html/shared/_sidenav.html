@@ -1,32 +1,36 @@
 ﻿<div class="span3" id="side-content">
     <div class="well sidebar-nav">
         <ul class="nav nav-list">
-            <li class="nav-header">Switch Content View</li>
-            <li ng-class="{active: Section === 'reviews'}">
-                <a href="#" ng-click="SwitchSection('reviews')">By Review</a>
+            <li class="nav-header">Contents</li>
+            <li ng-class="{active: Section == 'about'}">
+                <a href="#" ng-click="SwitchSection('about')">About this Site</a>
             </li>
-            <li ng-class="{active: Section === 'authors'}">
-                <a href="#" ng-click="SwitchSection('authors')">By Author</a>
+            <li ng-class="{active: Section == 'reviews'}">
+                <a href="#" ng-click="SwitchSection('reviews')">Read Reviews</a>
+            </li>
+            <li ng-class="{active: Section == 'authors'}">
+                <a href="#" ng-click="SwitchSection('authors')">See Authors</a>
+            </li>
+            <li ng-class="{active: Section == 'contact'}">
+                <a href="#" ng-click="SwitchSection('contact')">Contact Joel</a>
             </li>
         </ul>
     </div><!--/.well -->
     <div ng-controller="BRM.TwitterController">
         <section ng-repeat="tweet in Tweets.slice(0, 3)">
             <article class="tweet">
-                <section>
+                <div class="content">
                     <a href="https://twitter.com/{{tweet.ScreenName}}" target="_blank">
                         <img ng-src="{{tweet.ProfileImageUrl}}" alt="{{tweet.Name}}" title="{{tweet.Name}}"/>
                     </a>
-                </section>
-                <section>
-                    <div>
+                    <div class="tweet-text">
                         <span class="name">{{ tweet.ScreenName + ":" }}</span>
-						<span class="text" ng-bind-html-unsafe="tweet.Text"></span>
+					    <span class="text" ng-bind-html-unsafe="tweet.Text"></span>
                     </div>
-                    <div class="details">
-                        <span class="date">{{ parseDateTime(tweet.CreatedAt) }}</span>
-                    </div>
-                </section>
+                </div>
+                <div class="details">
+                    <span class="date">{{ parseDateTime(tweet.CreatedAt) }}</span>
+                </div>
             </article>
         </section>
     </div>

@@ -1,1 +1,7 @@
-﻿<h2 ng-click="resetFullAuthor(author)">{{author.LastName}}</h2>
+﻿<div ng-show="author.HasResults" class="recent-author">
+    <img ng-src="{{ GetSmallAuthorImage(author) }}" />
+    <h2 ng-click="resetFullAuthor(author)">{{author.FirstName + " " + author.LastName}}</h2>
+</div>
+<div ng-show="!author.HasResults">
+    none
+</div>

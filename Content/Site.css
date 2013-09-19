@@ -21,7 +21,8 @@
     margin-right: 10px;
 }
 
-.recent-reviews-navigation div {
+.recent-reviews-navigation div,
+.recent-authors-navigation div {
     float: right;
     display: inline-block;
 }
@@ -100,7 +101,6 @@
 }
 
 #full-review #more-details-open {
-    /*background-color: #0088cc;*/
     background-color: #fff;
     border: 3px solid #0088cc;
     width: 72%;
@@ -109,6 +109,12 @@
     margin-left: -30px;
     position: absolute;
 }
+
+/*
+#full-review #more-details-open:hover {
+    color: red;
+}
+*/
 
 #full-review #more-details-open .main {
 	width: 91%;
@@ -150,6 +156,14 @@
     position: relative;
 }
 
+.tweet .tweet-text {
+    margin-left: 60px;
+    position: absolute;
+    top: 5px;
+    letter-spacing: .1em;
+    font-family: pico black;
+}
+
 .tweet .name {
     font-weight: bold;
 }
@@ -161,6 +175,7 @@
 .tweet .details {
     position: relative;
     height: 16px;
+    margin-top: 32px;
 }
 
 .tweet .date {
@@ -171,18 +186,75 @@
     letter-spacing: .1em;
 }
 
-#review-pager {
+/* THIS WILL BE A DIRECTIVE */
+.player {
+    position: absolute;
+    margin-top: 10px;
+    right: 30px;
 }
 
-#review-pager .nav {
+.player span {
+    font-weight: bold;
+}
+
+.player span:hover {
+    cursor: pointer;
+}
+
+.player span:hover {
+    color: blue;
+}
+
+/* THIS WILL BE A DIRECTIVE */
+#pager {
+    position: relative;
+    top: 5px;
+}
+
+#pager .nav {
     cursor: pointer;
     font-weight: bold;
 
 }
 
-#review-pager .nav:hover {
+#pager .nav:hover {
     color: blue;
 
+}
+
+/* THIS WILL BE A DIRECTIVE */
+#genre-picker span {
+    padding-right: 5px;
+    vertical-align: top;
+    position: relative;
+    top: 5px;
+}
+
+#genre-picker {
+    padding-right: 10px;
+}
+
+.recent-review {
+}
+
+.recent-review .synopsis {
+    text-decoration: underline;
+    color: #5a5a5a;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.recent-review .more {
+    display: block;
+    letter-spacing: .1em;
+    color: gray;
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.recent-review .more:hover {
+    cursor: pointer;
+    color: blue;
 }
 
 .random-review-body {
@@ -205,4 +277,13 @@
 .random-review-body .player-controls span:hover {
 	cursor: pointer;
 	color: blue;
+}
+
+.active {
+	font-weight: bold;
+	color: red;
+}
+
+.main-about div {
+	padding-bottom: 15px;
 }

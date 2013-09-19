@@ -5,17 +5,25 @@
         <div id="recent-authors" ng-class="{undisplayed: FullAuthor != null}">
             <div class="row-fluid">
                 <div class="span12 recent-authors-navigation">
-                    <div>[navigation]</div>
-                    <div>
-                        <span>Genre:</span><select ng-model="CurrentGenre" ng-options="g.OriginalId as g.Name for g in Genres"></select>
-                    </div>  
+                    <div id="pager">
+                        <span class="nav" ng-click="Navigate(0)">|<</span>
+                        <span class="nav" ng-click="Navigate(AuthorFilter.PageIndex -1 )"><</span>
+                        Page {{AuthorFilter.PageIndex + 1}} of {{AuthorFilter.TotalPages}}
+                        <span class="nav" ng-click="Navigate(AuthorFilter.PageIndex + 1)">></span>
+                        <span class="nav" ng-click="Navigate(AuthorFilter.TotalPages - 1)">>|</span>
+                    </div>
+                    <!--div id="genre-picker">
+                        <span>Genre:</span><select ng-model="CurrentGenre"
+                                                   ng-options="g.OriginalId as g.Name for g in Genres"
+                                                   ng-change="Navigate(0)"></select>
+                    </div-->  
                 </div>
             </div>
             <div class="row-fluid">
-                <div class="span4 recent" ng-repeat="author in RecentAuthors.slice(0, 3)" ng-include="Authors.RecentAuthor"></div>
+                <div class="span4 recent" ng-repeat="author in RecentAuthors.slice(0, 3)" ng-include="Authors.RecentAuthor"></div><!--/span-->
             </div>
             <div class="row-fluid">
-                <div class="span4 recent" ng-repeat="author in RecentAuthors.slice(3, 6)" ng-include="Authors.RecentAuthor"></div>
+                <div class="span4 recent" ng-repeat="author in RecentAuthors.slice(3, 6)" ng-include="Authors.RecentAuthor"></div><!--/span-->
             </div>
         </div>
         <div ng-class="{undisplayed: FullAuthor == null}" ng-include="Authors.FullAuthor"></div>

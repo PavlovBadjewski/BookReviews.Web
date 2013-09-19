@@ -9,7 +9,7 @@
                 {{ 'Reviewed:' + parseDate(FullReview.ReadDate) }}
             </span>
         </h1>
-        <span class="back" ng-click="$parent.FullReview = null">« Back</span>
+        <span class="back" ng-click="resetFullReview(null)">« Back</span>
     </div>
     <div class="span12">
         <div id="more-details-closed" ng-click="MoreInfoShowing = !MoreInfoShowing" ng-class="{undisplayed: MoreInfoShowing}" class="more-details-nav">Show More Details</div>

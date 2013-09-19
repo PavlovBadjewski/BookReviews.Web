@@ -1,5 +1,12 @@
-﻿<h2 ng-click="resetFullReview(review)">{{review.BookTitle}}</h2>
-<span class="authors" ng-repeat="author in review.Authors">
-    {{ author.FirstName + ' ' + author.LastName + author.Delimiter }}  <!-- We may want to do this as a function instead passing in the index??? -->
-</span>
-<p>{{review.ShortReview}}</p>
+﻿<div ng-show="review.HasResults" class="recent-review">
+    <h2 ng-click="resetFullReview(review)">{{review.BookTitle}}</h2>
+    <span class="authors" ng-repeat="author in review.Authors">
+        {{ author.FirstName + ' ' + author.LastName + author.Delimiter }}  <!-- We may want to do this as a function instead passing in the index??? -->
+    </span>
+    <p>
+        <span class="synopsis">Synopsis:</span> {{review.ShortReview}}<span class="more" ng-click="resetFullReview(review)">Read More</span>
+    </p>
+</div>
+<div ng-show="!review.HasResults">
+
+</div>

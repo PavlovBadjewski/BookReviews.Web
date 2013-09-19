@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>{{Title}}</title>
+        <title>Joel's Book Reviews</title>
         <link href="/Content/bootstrap/css/bootstrap.css" rel="stylesheet" />
         <link href="/Content/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
         <link href="/Content/Site.css" rel="stylesheet" />
@@ -17,23 +17,38 @@
                 <section id="Section1" ng-include="Shared.SideNav"></section>
 
                 <div class="span9">
-                    <div ng-include="Reviews.Main" ng-class="{undisplayed: Section != 'reviews'}"></div>
-                    <div ng-include="Authors.Main" ng-class="{undisplayed: Section != 'authors'}"></div>
+                    <div ng-include="About.Main" ng-hide="Section != 'about'"></div>
+                    <div ng-include="Reviews.Main" ng-hide="Section != 'reviews'"></div>
+                    <div ng-include="Authors.Main" ng-hide="Section != 'authors'"></div>
+                    <div ng-include="Contact.Main" ng-hide="Section != 'contact'"></div>
                 </div>
 
                 <section id="footer" ng-include="Shared.Footer"></section>
             </div>
         </div>  
       
+        <!-- THIRD PARTY -->
         <script src="/Scripts/ThirdParty/angular.js"></script>
         <script src="/Scripts/ThirdParty/angular-resource.js"></script>
         <script src="/Content/bootstrap/js/bootstrap.js"></script>
+        
+        <!-- UTILITIES -->
         <script src="/Scripts/Custom/GlobalManagement.js"></script>
-        <script src="/Scripts/Custom/ContentDisplay.js"></script>
-        <script src="/Scripts/Custom/Reviews.js"></script>
-        <script src="/Scripts/Custom/Authors.js"></script>
-        <script src="/Scripts/Custom/Twitter.js"></script>
         <script src="/Scripts/Custom/Utilities.js"></script>
-        <script src="/Scripts/Custom/GlobalData.js"></script>
+        
+        <!-- SERVICES -->
+        <script src="/Scripts/Custom/Directives/ContentPlayer.js"></script>
+
+        <!-- DIRECTIVES -->
+        <script src="/Scripts/Custom/Services/Global.js"></script>
+        <script src="/Scripts/Custom/Services/Genre.js"></script>
+
+        <!-- CONTROLLERS -->
+        <script src="/Scripts/Custom/Controllers/About.js"></script>
+        <script src="/Scripts/Custom/Controllers/Authors.js"></script>
+        <script src="/Scripts/Custom/Controllers/Contact.js"></script>
+        <script src="/Scripts/Custom/Controllers/ContentDisplay.js"></script>
+        <script src="/Scripts/Custom/Controllers/Reviews.js"></script>
+        <script src="/Scripts/Custom/Controllers/Twitter.js"></script>
     </body>
 </html>

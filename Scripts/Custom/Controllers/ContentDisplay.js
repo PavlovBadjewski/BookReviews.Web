@@ -1,9 +1,13 @@
-﻿BRM.ContentDisplayController = function ($scope) {
+﻿BRM.ContentDisplayController = function ($scope, Global) {
     $scope.Shared = {
         'Footer': '/Content/html/shared/_footer.html',
         'SideNav': '/Content/html/shared/_sidenav.html',
         'MainNav': '/Content/html/shared/_mainnav.html'
     }
+
+    $scope.About = {
+        'Main': '/Content/html/about/index.html'
+    };
 
     $scope.Reviews = {
         'Main': '/Content/html/reviews/index.html',
@@ -19,11 +23,14 @@
         'FullAuthor': '/Content/html/authors/_fullAuthor.html'
     };
 
-    $scope.Section = 'reviews';
-    $scope.Title = "Joel's Book Reviews";
+    $scope.Contact = {
+        'Main': '/Content/html/contact/index.html'
+    };
+
+    $scope.Section = Global.Section;
 	
 	$scope.SwitchSection = function(section) {
-		$scope.Section = section;
+	    $scope.Section = Global.Section = section;
 	};
 
     return $scope;
