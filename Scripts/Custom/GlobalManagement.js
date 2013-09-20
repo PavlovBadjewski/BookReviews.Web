@@ -1,7 +1,7 @@
 ﻿//  NOTE: Maybe all of the global data can be managed right in angular.  Except perhaps for some utility functions
 
 var BRM = BookReviewsManager = {};
-BRM.WebApi = "http://api.book.reviews/Api/";
+BRM.WebApi = "http://bookreviewsapi.apphb.com/Api/";
 
 BRM.InitializeEvent = function (evt) {
     var createRepeatingFunction = function (fn, frequency) {
